@@ -6,8 +6,10 @@ public class Testhelloworld {
 
 	
 	@Test
-	public void Testhelloworld() {
+	public void testhelloworld() {
 		
-		System.out.println("..Hello World...!");
+		System.out.println(" ..hello world...!");
+
 	}
+
 }
