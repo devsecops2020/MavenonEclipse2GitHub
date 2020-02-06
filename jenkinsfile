@@ -4,21 +4,21 @@ agent any
             stage("Compile Stage"){
               steps{
                   withMaven(jdk:'jdk-11.0.5', maven:'apache-maven-3.6.3'){
-                  sh 'mvn clean compile'                            
+                  sh label: '', script: 'mvn clean compile'                            
                   }
               }
             }
             stage("Testing Stage"){
               steps{
                   withMaven(jdk:'jdk-11.0.5', maven:'apache-maven-3.6.3'){
-                  sh 'mvn test'
+                  sh label: '', script: 'mvn test'
                   }
               }
             }
             stage("Deployment Stage"){
               steps{
                   withMaven(jdk:'jdk-11.0.5', maven:'apache-maven-3.6.3'){
-                  sh 'mvn deploy'
+                  sh label: '', script: 'mvn deploy'
                   }
               }
          }
