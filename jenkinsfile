@@ -4,21 +4,21 @@ agent any
             stage("Compile Stage"){
               steps{
                   withMaven(jdk: 'JDK', maven: 'Maven'){
-                  'mvn clean compile'                            
+                  bat 'mvn clean compile'                            
                   }
               }
             }
             stage("Testing Stage"){
               steps{
                   withMaven(JDK: 'jdk', maven:'Maven'){
-                  'mvn test'
+                  bat 'mvn test'
                   }
               }
             }
             stage("Deployment Stage"){
               steps{
                   withMaven(JDK: 'jdk', maven:'Maven'){
-                  'mvn deploy'
+                  bat 'mvn deploy'
                   }
               }
          }
