@@ -6,24 +6,23 @@ agent any
                   withMaven(jdk:'jdk-11.0.5')
                   withMaven(maven:'maven-3.6.3'){
                   sh 'mvn clean compile'
-                  }
-              }
+                       }
+                   }
             }
             stage("Testing Stage"){
               steps{
                   withMaven(jdk:'jdk-11.0.5')
                   withMaven(maven:'maven-3.6.3'){
                   sh 'mvn test'
-                  }
-              }
+                      }
+                   }
             }
             stage("Deployment Stage"){
               steps{
                   withMaven(jdk:'jdk-11.0.5')
                   withMaven(maven:'maven-3.6.3'){
                   sh 'mvn deploy'
+                      }
                   }
-              }
-         }
-      }
-}
+            }
+       }
