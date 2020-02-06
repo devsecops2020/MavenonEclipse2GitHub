@@ -3,25 +3,22 @@ agent any
       stages{
             stage("Compile Stage"){
               steps{
-                  withMaven(maven:'apache-maven-3.6.3') {
+                  withMaven(jdk: '11.0.5', maven:'apache-maven-3.6.3') {
                   sh label: '', script: 'mvn clean compile'
-                  withMaven(jdk: 'JDK') {
                   }
-              }
-            }
+               }
+             }  
             stage("Testing Stage") {
               steps{
-                  withMaven(maven:'apache-maven-3.6.3') {
+                  withMaven(jdk: '11.0.5', maven:'apache-maven-3.6.3') {
                   sh label: '', script: 'mvn test'
-                  withMaven(jdk: 'JDK') {
                   }
               }
             }
             stage("Deployment Stage") {
               steps{
-                  withMaven(maven:'apache-maven-3.6.3') {
+                  withMaven(jdk: '11.0.5', maven:'apache-maven-3.6.3') {
                   sh label: '', script: 'mvn deploy'
-                  withMaven(jdk: 'JDK') {
                   }
               }
          }
