@@ -8,21 +8,21 @@ agent any
               steps{
                   withMaven(jdk:'JDK')
                   withMaven(maven:'maven-3.6.3'){
-                  bat "mvn -Dmaven.test.failure.ignore=clean compile'}
+                  bat "mvn clean compile'}
                    }
                                  }
             stage("Testing Stage"){
               steps{
                   withMaven(jdk:'JDK')
                   withMaven(maven:'maven-3.6.3'){
-                  bat 'mvn -Dmaven.test.failure.ignore=maven test'}
+                  bat 'mvn maven test'}
                    }
                                  }
             stage("Deployment Stage"){
               steps{
                   withMaven(jdk:'JDK')
                   withMaven(maven:'maven-3.6.3'){
-                  bat 'mvn -Dmaven.test.failure.ignore=maven deploy'}
+                  bat 'mvn maven deploy'}
                   }
                                     }
              }
