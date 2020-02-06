@@ -3,7 +3,8 @@ agent any
       stages{
             stage("Build"){
               steps{
-                   https://github.com/devsecops2020/JavaHelloWorld.git 
+                   https://github.com/devsecops2020/JavaHelloWorld.git
+                   }
               stage("Compile Stage"){
               steps{
                   withMaven(jdk:'JDK')
