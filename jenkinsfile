@@ -3,22 +3,22 @@ agent any
       stages{
             stage("Compile Stage"){
               steps{
-                  withMaven(jdk: 'JDK', maven: 'Maven') {
-                  sh 'mvn clean compile'                            
+                  withMaven(jdk: 'JDK', maven: 'Maven'){
+                  'mvn clean compile'                            
                   }
               }
             }
             stage("Testing Stage"){
               steps{
                   withMaven(JDK: 'jdk', maven:'Maven'){
-                  sh 'mvn test'
+                  'mvn test'
                   }
               }
             }
             stage("Deployment Stage"){
               steps{
                   withMaven(JDK: 'jdk', maven:'Maven'){
-                  sh 'mvn deploy'
+                  'mvn deploy'
                   }
               }
          }
